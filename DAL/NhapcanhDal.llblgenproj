@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--LLBLGen Pro v5.11 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="5.11" TargetFrameworkName="LLBLGen Pro Runtime Framework" UseLegacyDefaults="false">
+  <Properties>
+    <Abbreviations />
+    <Property Name="AdditionalTaskPerformerFolder" Value="" />
+    <Property Name="AdditionalTasksFolder" Value="" />
+    <Property Name="AdditionalTemplatesFolder" Value="" />
+    <Property Name="AdditionalTypeConverterFolder" Value="" />
+    <Property Name="AddNewElementsAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AddNewFieldsAfterRefresh_v5" Value="true" />
+    <Property Name="AddNewFieldsAfterRelationalModelDataSync_v5" Value="true" />
+    <Property Name="AddNewViewsAsEntitiesAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewViewsAsEntitiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AutoAddManyToManyRelationships" Value="false" />
+    <Property Name="AutoAssignSequencesToIntegerPks" Value="true" />
+    <Property Name="AutoAssignTypeConverterToFieldMapping" Value="true" />
+    <Property Name="AutomaticallyGenerateSourceCodeOnProjectSave" Value="true" />
+    <Property Name="ConnectionStringKeyNamePattern" Value="Xuatnhapcanh_ConnectionString" />
+    <Property Name="DefaultDDLSQLScriptDestinationFolder" Value=".\DDLSQLScripts" />
+    <Property Name="DefaultDeleteRuleAction" Value="1" />
+    <Property Name="DefaultSourceCodeDestinationFolder" Value=".\Code" />
+    <Property Name="DefaultUpdateRuleAction" Value="0" />
+    <Property Name="DeleteObsoleteFiles" Value="true" />
+    <Property Name="ElementNamePrefixPattern" Value="{$SchemaName}" />
+    <Property Name="ElementNamePrefixPatternIsAppliedWhen" Value="1" />
+    <Property Name="EncodingToUse" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForTable" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForView" Value="4" />
+    <Property Name="EntityFieldNameStripPattern" Value="{}{}" />
+    <Property Name="EntityNameStripPattern" Value="{tbl_}{}" />
+    <Property Name="ExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="FailCodeGenerationOnWriteError" Value="false" />
+    <Property Name="FieldMappedOntoRelatedFieldPattern" Value="{$RelatedFieldName}" />
+    <Property Name="FkFieldsAreNamedAfterTargetField" Value="true" />
+    <Property Name="ForeignKeyConstraintPattern" Value="FK_{$Guid}" />
+    <Property Name="ForeignKeyFieldPattern" Value="{$NavigatorName}{$RelatedFieldName}" />
+    <Property Name="GroupUsage" Value="0" />
+    <Property Name="IdentifyingFieldsFollowDBPrimaryKeyConstraints_v5" Value="true" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseInsensitiveDBs" Value="false" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseSensitiveDBs" Value="false" />
+    <Property Name="LengthPrecisionScaleFollowDBLengthPrecisionScale_v5" Value="true" />
+    <Property Name="MakeElementNamePascalCasing" Value="true" />
+    <Property Name="NavigatorMappedOntoManyToManyPattern" Value="{$EndEntityName}CollectionVia{$IntermediateEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneManyToOnePattern" Value="{$EndEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneToManyPattern" Value="{$EndEntityName$P}" />
+    <Property Name="NonExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="PreferDecimalOverCurrencyTypes" Value="true" />
+    <Property Name="PreferNaturalCharacterTypes" Value="true" />
+    <Property Name="PreferSystemSequencesOverSchemaSequencesIfApplicable" Value="true" />
+    <Property Name="PreferVariableLengthTypes" Value="true" />
+    <Property Name="PrimaryKeyConstraintPattern" Value="PK_{$Guid}" />
+    <Property Name="ProjectCreator" Value="App.Xuatnhapcanh.Dal" />
+    <Property Name="ProjectName" Value="App.Xuatnhapcanh.Dal" />
+    <Property Name="ReflectNullabilityOfElementFieldInTargetField_v5" Value="false" />
+    <Property Name="ReflectTypeOfElementFieldInTargetField_v5" Value="true" />
+    <Property Name="RelationalModelDataElementNameCasingCaseInsensitiveDBs" Value="3" />
+    <Property Name="RelationalModelDataElementNameCasingCaseSensitiveDBs" Value="3" />
+    <Property Name="RelationshipsFollowDBForeignKeyConstraints_v5" Value="true" />
+    <Property Name="RemoveUnderscoresFromElementName" Value="true" />
+    <Property Name="RemoveUnmappedElementsAfterRefresh_v5" Value="false" />
+    <Property Name="RemoveUnmappedElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRefresh" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRelationalModelDataSync" Value="false" />
+    <Property Name="RetrieveDBCustomProperties" Value="false" />
+    <Property Name="RootNamespace" Value="" />
+    <Property Name="SequenceNameMatchingPattern" Value="SEQ_{$TableName}" />
+    <Property Name="SequencePattern" Value="SEQ_{$EntityName}" />
+    <Property Name="SetGroupNameAfterSchemaName" Value="true" />
+    <Property Name="SetSchemaNameAfterGroupName" Value="true" />
+    <Property Name="SingularizeElementNames" Value="true" />
+    <Property Name="StoredProcNameStripPattern" Value="{pr_, sp_}{}" />
+    <Property Name="StoreTimeLastGeneratedIntoProject" Value="false" />
+    <Property Name="StoreTimeLastSyncIntoProject" Value="true" />
+    <Property Name="SyncCustomFieldOrderingWithTableFieldIndex" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="SyncRelationalModelDataElementNameWithModelElementName_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="TableValuedFunctionNameStripPattern" Value="{fn_, pr_, sp_}{}" />
+    <Property Name="TargetPerEntityEdgesRequireBackingFkConstraint" Value="true" />
+    <Property Name="TypedViewFieldNameStripPattern" Value="{}{}" />
+    <Property Name="TypedViewMappedOnResultsetPattern" Value="{$ProcFunctionName}{$ResultsetName}Result" />
+    <Property Name="TypedViewNameStripPattern" Value="{vw_}{}" />
+    <Property Name="UniqueConstraintPattern" Value="UC_{$Guid}" />
+    <Property Name="UniqueConstraintsFollowDBUniqueConstraints_v5" Value="true" />
+    <Property Name="UpdateCustomPropertiesAfterRefresh_v5" Value="false" />
+    <Property Name="UpdateCustomPropertiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="UseCustomFieldOrderingOnNewElements" Value="false" />
+  </Properties>
+  <TypeShortcuts />
+  <IgnoredWarnings />
+  <SavedSearchQueries />
+  <CodeGenerationCyclePreferences>
+    <OutputType Value="3">
+      <LastUsedPreferences>
+        <DestinationRootFolder Value="C:\HiuBoo\Code ND\HieuTest\DAL" />
+        <FrameworkName Value="LLBLGen Pro Runtime Framework" />
+        <LanguageName Value="C#" />
+        <PlatformName Value=".NET 7" />
+        <PresetName Value="SD.Presets.Adapter.General.Netstandard" />
+        <RootNamespace Value="App.Xuatnhapcanh.Dal" />
+        <TemplateGroup Value="Adapter" />
+        <TemplateBindings>
+          <Binding Name="SD.TemplateBindings.PostgreSqlSpecific" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates.Net7" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates" />
+          <Binding Name="SD.TemplateBindings.General" />
+        </TemplateBindings>
+        <AdhocTemplateSets />
+      </LastUsedPreferences>
+    </OutputType>
+  </CodeGenerationCyclePreferences>
+  <OutputSettingValues>
+    <SettingValues>
+      <SettingValue Name="1:AdapterDbGenericSubFolderName" Value="DatabaseGeneric" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificNamespaceSuffix" Value="DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificProjectFileSuffix" Value="DBSpecific" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificSubFolderName" Value="DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:ConvertNulledReferenceTypesToDefaultValue" Value="true" Type="3" />
+      <SettingValue Name="1:EntityBaseClassNameDefault" Value="CommonEntityBase" Type="18" />
+      <SettingValue Name="1:FieldPropertyIsPublicDefault" Value="true" Type="3" />
+      <SettingValue Name="1:GenerateAsNullableTypeDefault" Value="true" Type="3" />
+      <SettingValue Name="1:GenerateEntityFieldFactory" Value="false" Type="3" />
+      <SettingValue Name="1:GenerateEntityFieldsFactory" Value="false" Type="3" />
+      <SettingValue Name="1:InlineValueTypedFields" Value="true" Type="3" />
+      <SettingValue Name="1:LazyLoadingWithoutResultReturnsNew" Value="false" Type="3" />
+      <SettingValue Name="1:NavigatorPropertyIsPublicDefault" Value="true" Type="3" />
+      <SettingValue Name="1:SupportedActionCombinations" Value="0,1,2,3,4,5,6,7" Type="18" />
+      <SettingValue Name="1:TdlEmitTimeDateInOutputFiles" Value="false" Type="3" />
+      <SettingValue Name="1:TypedListOutputTypeDefault" Value="PocoWithQuerySpecQuery" Type="18" />
+      <SettingValue Name="1:TypedViewOutputTypeDefault" Value="PocoWithQuerySpecQuery" Type="18" />
+    </SettingValues>
+  </OutputSettingValues>
+  <CodeGenerationMetaDataDefaults>
+    <TargetElement Type="256">
+      <Defaults>
+        <Attributes>
+          <Attribute Value="Browsable($false)" />
+        </Attributes>
+      </Defaults>
+    </TargetElement>
+  </CodeGenerationMetaDataDefaults>
+  <EntityModel>
+    <ValueTypeDefinitions />
+    <EntityDefinitions>
+      <EntityDefinition Name="CustomsAnswerOption" GroupName="Appxnc" ObjectID="ecb80a7a-68f0-432a-bbdc-8e5dc00ff532">
+        <Fields>
+          <Field Name="Content" Type="string" MaxLength="1000" />
+          <Field Name="DetailRequired" Type="bool" IsOptional="true" />
+          <Field Name="Id" Type="string" MaxLength="40" IsPrimaryKey="true" />
+          <Field Name="QuestionId" Type="string" IsOptional="true" MaxLength="40" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="CustomsImmigration" GroupName="Appxnc" ObjectID="09b54d4a-9feb-4eb5-8723-d41bc6f163d5">
+        <Fields>
+          <Field Name="Address" Type="string" IsOptional="true" MaxLength="200" />
+          <Field Name="Cash" Type="bool" IsOptional="true" />
+          <Field Name="CityFrom" Type="string" IsOptional="true" MaxLength="300" />
+          <Field Name="CityTo" Type="string" IsOptional="true" MaxLength="300" />
+          <Field Name="Dob" Type="datetime" IsOptional="true" />
+          <Field Name="Email" Type="string" IsOptional="true" MaxLength="100" />
+          <Field Name="EntryDate" Type="datetime" IsOptional="true" />
+          <Field Name="FirstName" Type="string" IsOptional="true" MaxLength="40" />
+          <Field Name="Gender" Type="bool" IsOptional="true" />
+          <Field Name="Goods" Type="bool" IsOptional="true" />
+          <Field Name="HotelName" Type="string" IsOptional="true" MaxLength="10485760" />
+          <Field Name="Id" Type="string" MaxLength="40" IsPrimaryKey="true" />
+          <Field Name="Jewellery" Type="bool" IsOptional="true" />
+          <Field Name="LaneAssignment" Type="bool" IsOptional="true" />
+          <Field Name="LastName" Type="string" IsOptional="true" MaxLength="40" />
+          <Field Name="LeaveDate" Type="datetime" IsOptional="true" />
+          <Field Name="LuggageCount" Type="int" IsOptional="true" Precision="10" />
+          <Field Name="Nationality" Type="string" IsOptional="true" MaxLength="100" />
+          <Field Name="PassportExpiredate" Type="datetime" IsOptional="true" />
+          <Field Name="PassportNo" Type="string" IsOptional="true" MaxLength="10485760" />
+          <Field Name="Status" Type="bool" IsOptional="true" />
+          <Field Name="Transportation" Type="string" IsOptional="true" MaxLength="200" />
+          <Field Name="TransportationNo" Type="string" IsOptional="true" MaxLength="200" />
+          <Field Name="Userid" Type="string" MaxLength="40" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="CustomsQuestion" GroupName="Appxnc" ObjectID="e1e3b481-a6bb-43ae-b824-11518be1b3b4">
+        <Fields>
+          <Field Name="Content" Type="string" IsOptional="true" MaxLength="4000" />
+          <Field Name="Id" Type="string" MaxLength="40" IsPrimaryKey="true" />
+          <Field Name="IsActive" Type="bool" IsOptional="true" />
+          <Field Name="QuestionType" Type="string" IsOptional="true" MaxLength="100" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="CustomsTaxis" GroupName="Appxnc" ObjectID="d838a6ad-d663-47bb-b4b6-8f29225ce78e">
+        <Fields>
+          <Field Name="HsCode" Type="int" IsOptional="true" Precision="10" />
+          <Field Name="Id" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="Name" Type="string" IsOptional="true" MaxLength="100" />
+          <Field Name="Origins" Type="string" IsOptional="true" MaxLength="100" />
+          <Field Name="Quantity" Type="int" IsOptional="true" Precision="10" />
+          <Field Name="Type" Type="string" IsOptional="true" MaxLength="100" />
+          <Field Name="UsePurposes" Type="string" IsOptional="true" MaxLength="500" />
+          <Field Name="Value" Type="decimal" IsOptional="true" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="CustomsUserAnswer" GroupName="Appxnc" ObjectID="a06c9263-6070-4e85-959e-d6b741625fab">
+        <Fields>
+          <Field Name="AnswerId" Type="string" MaxLength="40" IsPrimaryKey="true" />
+          <Field Name="AnswerText" Type="string" IsOptional="true" MaxLength="1000" />
+          <Field Name="ChoiceId" Type="string" IsOptional="true" MaxLength="40" />
+          <Field Name="CreatedAt" Type="datetime" IsOptional="true" />
+          <Field Name="ImmigrationFormId" Type="string" MaxLength="40" />
+          <Field Name="QuestionId" Type="string" IsOptional="true" MaxLength="40" />
+          <Field Name="UserId" Type="string" MaxLength="40" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="News" GroupName="Appxnc" ObjectID="034712e4-f949-4d24-a0b6-87ebe38e58ef">
+        <Fields>
+          <Field Name="Content" Type="string" IsOptional="true" MaxLength="1073741824" />
+          <Field Name="Headline" Type="string" IsOptional="true" MaxLength="200" />
+          <Field Name="Id" Type="string" MaxLength="40" IsPrimaryKey="true" />
+          <Field Name="NewsType" Type="string" IsOptional="true" MaxLength="50" />
+        </Fields>
+      </EntityDefinition>
+    </EntityDefinitions>
+    <Relationships>
+      <NormalRelationship Name="Appxnc.CustomsAnswerOption.CustomsQuestion-Appxnc.CustomsQuestion.CustomsAnswerOptions" Start="Appxnc:CustomsAnswerOption" End="Appxnc:CustomsQuestion" StartNavigator="CustomsQuestion" EndNavigator="CustomsAnswerOptions" Type="4" EndIsOptional="true" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="QuestionId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Appxnc.CustomsUserAnswer.CustomsAnswerOption-Appxnc.CustomsAnswerOption.CustomsUserAnswers" Start="Appxnc:CustomsUserAnswer" End="Appxnc:CustomsAnswerOption" StartNavigator="CustomsAnswerOption" EndNavigator="CustomsUserAnswers" Type="4" EndIsOptional="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ChoiceId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Appxnc.CustomsUserAnswer.CustomsImmigration-Appxnc.CustomsImmigration.CustomsUserAnswers" Start="Appxnc:CustomsUserAnswer" End="Appxnc:CustomsImmigration" StartNavigator="CustomsImmigration" EndNavigator="CustomsUserAnswers" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ImmigrationFormId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Appxnc.CustomsUserAnswer.CustomsQuestion-Appxnc.CustomsQuestion.CustomsUserAnswers" Start="Appxnc:CustomsUserAnswer" End="Appxnc:CustomsQuestion" StartNavigator="CustomsQuestion" EndNavigator="CustomsUserAnswers" Type="4" EndIsOptional="true" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="QuestionId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+    </Relationships>
+    <InheritanceHierarchies />
+  </EntityModel>
+  <TargetDatabases>
+    <TargetDatabase Type="88EBFD8C-CBDD-4452-88AF-1C99E41A123F" SyncSource="2">
+      <ConnectionElements>
+        <ConnectionElement Name="ServerName" Value="10.192.4.212" />
+        <ConnectionElement Name="CatalogName" Value="XUATNHAPCANH" />
+        <ConnectionElement Name="UserID" Value="anhnd" />
+        <ConnectionElement Name="Password" Value="" />
+        <ConnectionElement Name="PortNumber" Value="27600" />
+        <ConnectionElement Name="SslMode" Value="Disable" />
+      </ConnectionElements>
+      <SystemSequences>
+        <Sequence Name="SystemIdentity" />
+      </SystemSequences>
+      <Catalogs>
+        <Catalog Name="XUATNHAPCANH">
+          <Schemas>
+            <Schema Name="appxnc" SyncSource="2" LastSyncWithDatabase="2025-07-30T10:00:48.6637407Z">
+              <Sequences>
+                <Sequence Name="customs_taxes_id_seq" />
+              </Sequences>
+              <Tables>
+                <Table Name="customs_answer_option">
+                  <PkConstraintName Name="noidung_tl_pk" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsPrimaryKey="true" DbType="24" Length="40" />
+                    <Field Name="question_id" Ordinal="2" IsOptional="true" DbType="24" Length="40" />
+                    <Field Name="detail_required" Ordinal="3" IsOptional="true" DbType="0" />
+                    <Field Name="content" Ordinal="4" TrackedChanges="2" DbType="24" Length="1000" />
+                  </Fields>
+                </Table>
+                <Table Name="customs_immigration">
+                  <PkConstraintName Name="thongtinnhapcanh_pk" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsPrimaryKey="true" DbType="24" Length="40" />
+                    <Field Name="userid" Ordinal="2" DbType="24" Length="40" />
+                    <Field Name="entry_date" Ordinal="3" IsOptional="true" DbType="5" />
+                    <Field Name="leave_date" Ordinal="4" IsOptional="true" DbType="5" />
+                    <Field Name="transportation" Ordinal="5" IsOptional="true" DbType="24" Length="200" />
+                    <Field Name="transportation_No" Ordinal="6" IsOptional="true" DbType="24" Length="200" />
+                    <Field Name="city_from" Ordinal="7" IsOptional="true" DbType="24" Length="300" />
+                    <Field Name="city_to" Ordinal="8" IsOptional="true" DbType="24" Length="300" />
+                    <Field Name="address" Ordinal="9" IsOptional="true" DbType="24" Length="200" />
+                    <Field Name="cash" Ordinal="10" IsOptional="true" TrackedChanges="2" DbType="0" />
+                    <Field Name="jewellery" Ordinal="11" IsOptional="true" TrackedChanges="2" DbType="0" />
+                    <Field Name="goods" Ordinal="12" IsOptional="true" TrackedChanges="2" DbType="0" />
+                    <Field Name="luggage_count" Ordinal="13" IsOptional="true" TrackedChanges="2" DbType="9" Precision="10" />
+                    <Field Name="last_name" Ordinal="14" IsOptional="true" TrackedChanges="2" DbType="24" Length="40" />
+                    <Field Name="first_name" Ordinal="15" IsOptional="true" TrackedChanges="2" DbType="24" Length="40" />
+                    <Field Name="status" Ordinal="16" IsOptional="true" TrackedChanges="2" DbType="0">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="trạng thái của bản khai báo" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="passport_no" Ordinal="17" IsOptional="true" TrackedChanges="2" DbType="24" Length="10485760" />
+                    <Field Name="passport_expiredate" Ordinal="18" IsOptional="true" TrackedChanges="2" DbType="5" />
+                    <Field Name="lane_assignment" Ordinal="19" IsOptional="true" TrackedChanges="2" DbType="0" />
+                    <Field Name="email" Ordinal="20" IsOptional="true" TrackedChanges="2" DbType="24" Length="100" />
+                    <Field Name="dob" Ordinal="21" IsOptional="true" TrackedChanges="2" DbType="5" />
+                    <Field Name="hotel_name" Ordinal="22" IsOptional="true" TrackedChanges="2" DbType="24" Length="10485760" />
+                    <Field Name="gender" Ordinal="23" IsOptional="true" TrackedChanges="2" DbType="0" />
+                    <Field Name="nationality" Ordinal="24" IsOptional="true" TrackedChanges="2" DbType="24" Length="100" />
+                  </Fields>
+                </Table>
+                <Table Name="customs_question">
+                  <PkConstraintName Name="danhmuc_cauhoi_pk" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsPrimaryKey="true" DbType="24" Length="40">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="guid" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="question_type" Ordinal="2" IsOptional="true" TrackedChanges="2" DbType="24" Length="100">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="loại câu hỏi" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="content" Ordinal="3" IsOptional="true" TrackedChanges="2" DbType="24" Length="4000">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="nội dung" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="is_active" Ordinal="4" IsOptional="true" TrackedChanges="2" DbType="0">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="trạng thái" />
+                      </CustomProperties>
+                    </Field>
+                  </Fields>
+                </Table>
+                <Table Name="customs_taxes">
+                  <PkConstraintName Name="customs_taxes_pk" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" HasDefaultValue="true" DefaultValue="nextval('appxnc.customs_taxes_id_seq'::regclass)" DefaultSequence="XUATNHAPCANH:appxnc:customs_taxes_id_seq" DbType="9" Precision="10" />
+                    <Field Name="name" Ordinal="2" IsOptional="true" DbType="24" Length="100">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="tên sản phẩm" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="type" Ordinal="3" IsOptional="true" DbType="24" Length="100">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="loại sản phẩm" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="origins" Ordinal="4" IsOptional="true" DbType="24" Length="100">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="nguồn gốc" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="use_purposes" Ordinal="5" IsOptional="true" DbType="24" Length="500">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="mục đích sử dụng" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="hs_code" Ordinal="6" IsOptional="true" DbType="9" Precision="10">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="mã HS" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="quantity" Ordinal="7" IsOptional="true" DbType="9" Precision="10">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="số lượng" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="value" Ordinal="8" IsOptional="true" DbType="14">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="giá trị" />
+                      </CustomProperties>
+                    </Field>
+                  </Fields>
+                </Table>
+                <Table Name="customs_user_answer">
+                  <PkConstraintName Name="traloi_cauhoi_pk" />
+                  <Fields>
+                    <Field Name="answer_id" Ordinal="1" IsPrimaryKey="true" DbType="24" Length="40">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="guid - cột lưu lịch sử trả lời câu hỏi" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="question_id" Ordinal="2" IsOptional="true" DbType="24" Length="40">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="id của câu hỏi" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="user_id" Ordinal="3" TrackedChanges="2" DbType="24" Length="40">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="người nộp" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="immigration_form_id" Ordinal="4" TrackedChanges="2" DbType="24" Length="40">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="ID form xuất nhập cảnh" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="answer_text" Ordinal="5" IsOptional="true" TrackedChanges="2" DbType="24" Length="1000">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="trả lời dạng văn bản" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="choice_id" Ordinal="6" IsOptional="true" TrackedChanges="2" DbType="24" Length="40">
+                      <CustomProperties>
+                        <CustomProperty Name="Description" Value="trả lời dạng lựa chọn" />
+                      </CustomProperties>
+                    </Field>
+                    <Field Name="created_at" Ordinal="7" IsOptional="true" TrackedChanges="2" DbType="22" />
+                  </Fields>
+                </Table>
+                <Table Name="news">
+                  <PkConstraintName Name="tintuc_pk" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsPrimaryKey="true" DbType="24" Length="40" />
+                    <Field Name="headline" Ordinal="2" IsOptional="true" DbType="24" Length="200" />
+                    <Field Name="content" Ordinal="3" IsOptional="true" DbType="19" Length="1073741824" />
+                    <Field Name="news_type" Ordinal="4" IsOptional="true" DbType="24" Length="50" />
+                  </Fields>
+                </Table>
+              </Tables>
+            </Schema>
+          </Schemas>
+          <ForeignKeyConstraints>
+            <ForeignKeyConstraint Name="appxnc:customs_answer_option:customs_answer_option_customs_question_fk" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="appxnc:customs_question:id" FkField="appxnc:customs_answer_option:question_id" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="appxnc:customs_user_answer:customs_user_answer_customs_answer_option_fk">
+              <FieldPairs>
+                <FieldPair PkField="appxnc:customs_answer_option:id" FkField="appxnc:customs_user_answer:choice_id" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="appxnc:customs_user_answer:customs_user_answer_customs_question_fk" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="appxnc:customs_question:id" FkField="appxnc:customs_user_answer:question_id" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="appxnc:customs_user_answer:traloi_cauhoi_fk2">
+              <FieldPairs>
+                <FieldPair PkField="appxnc:customs_immigration:id" FkField="appxnc:customs_user_answer:immigration_form_id" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+          </ForeignKeyConstraints>
+        </Catalog>
+      </Catalogs>
+    </TargetDatabase>
+  </TargetDatabases>
+  <MappingStores>
+    <MappingStore Type="88EBFD8C-CBDD-4452-88AF-1C99E41A123F">
+      <EntityMappings>
+        <EntityMapping EntityName="Appxnc:CustomsAnswerOption" TargetName="XUATNHAPCANH:appxnc:customs_answer_option">
+          <FieldMappings>
+            <FieldMapping FieldName="Content" TargetFieldName="content" />
+            <FieldMapping FieldName="DetailRequired" TargetFieldName="detail_required" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="QuestionId" TargetFieldName="question_id" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Appxnc:CustomsImmigration" TargetName="XUATNHAPCANH:appxnc:customs_immigration">
+          <FieldMappings>
+            <FieldMapping FieldName="Address" TargetFieldName="address" />
+            <FieldMapping FieldName="Cash" TargetFieldName="cash" />
+            <FieldMapping FieldName="CityFrom" TargetFieldName="city_from" />
+            <FieldMapping FieldName="CityTo" TargetFieldName="city_to" />
+            <FieldMapping FieldName="Dob" TargetFieldName="dob" />
+            <FieldMapping FieldName="Email" TargetFieldName="email" />
+            <FieldMapping FieldName="EntryDate" TargetFieldName="entry_date" />
+            <FieldMapping FieldName="FirstName" TargetFieldName="first_name" />
+            <FieldMapping FieldName="Gender" TargetFieldName="gender" />
+            <FieldMapping FieldName="Goods" TargetFieldName="goods" />
+            <FieldMapping FieldName="HotelName" TargetFieldName="hotel_name" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="Jewellery" TargetFieldName="jewellery" />
+            <FieldMapping FieldName="LaneAssignment" TargetFieldName="lane_assignment" />
+            <FieldMapping FieldName="LastName" TargetFieldName="last_name" />
+            <FieldMapping FieldName="LeaveDate" TargetFieldName="leave_date" />
+            <FieldMapping FieldName="LuggageCount" TargetFieldName="luggage_count" />
+            <FieldMapping FieldName="Nationality" TargetFieldName="nationality" />
+            <FieldMapping FieldName="PassportExpiredate" TargetFieldName="passport_expiredate" />
+            <FieldMapping FieldName="PassportNo" TargetFieldName="passport_no" />
+            <FieldMapping FieldName="Status" TargetFieldName="status" />
+            <FieldMapping FieldName="Transportation" TargetFieldName="transportation" />
+            <FieldMapping FieldName="TransportationNo" TargetFieldName="transportation_No" />
+            <FieldMapping FieldName="Userid" TargetFieldName="userid" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Appxnc:CustomsQuestion" TargetName="XUATNHAPCANH:appxnc:customs_question">
+          <FieldMappings>
+            <FieldMapping FieldName="Content" TargetFieldName="content" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="IsActive" TargetFieldName="is_active" />
+            <FieldMapping FieldName="QuestionType" TargetFieldName="question_type" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Appxnc:CustomsTaxis" TargetName="XUATNHAPCANH:appxnc:customs_taxes">
+          <FieldMappings>
+            <FieldMapping FieldName="HsCode" TargetFieldName="hs_code" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" SequenceToUse="XUATNHAPCANH:appxnc:customs_taxes_id_seq" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="Origins" TargetFieldName="origins" />
+            <FieldMapping FieldName="Quantity" TargetFieldName="quantity" />
+            <FieldMapping FieldName="Type" TargetFieldName="type" />
+            <FieldMapping FieldName="UsePurposes" TargetFieldName="use_purposes" />
+            <FieldMapping FieldName="Value" TargetFieldName="value" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Appxnc:CustomsUserAnswer" TargetName="XUATNHAPCANH:appxnc:customs_user_answer">
+          <FieldMappings>
+            <FieldMapping FieldName="AnswerId" TargetFieldName="answer_id" />
+            <FieldMapping FieldName="AnswerText" TargetFieldName="answer_text" />
+            <FieldMapping FieldName="ChoiceId" TargetFieldName="choice_id" />
+            <FieldMapping FieldName="CreatedAt" TargetFieldName="created_at" />
+            <FieldMapping FieldName="ImmigrationFormId" TargetFieldName="immigration_form_id" />
+            <FieldMapping FieldName="QuestionId" TargetFieldName="question_id" />
+            <FieldMapping FieldName="UserId" TargetFieldName="user_id" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Appxnc:News" TargetName="XUATNHAPCANH:appxnc:news">
+          <FieldMappings>
+            <FieldMapping FieldName="Content" TargetFieldName="content" />
+            <FieldMapping FieldName="Headline" TargetFieldName="headline" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="NewsType" TargetFieldName="news_type" />
+          </FieldMappings>
+        </EntityMapping>
+      </EntityMappings>
+      <TypedViewMappings />
+      <SPCallMappings />
+      <TvfCallMappings />
+      <TypeConversionDefinitions />
+    </MappingStore>
+  </MappingStores>
+  <ModelViews />
+</Project>
