@@ -21,37 +21,35 @@ namespace HieuTest.Controllers
             return Ok(videoGames);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetCustomsAnswerOptionById(string id)
+        // GET api/videogame/5
+        [HttpGet("{id:int}")]
+        public ActionResult<VideoGame> GetVideoGameById(int id)
         {
-            CustomsAnswerOptionManager manager = new CustomsAnswerOptionManager();
-            var entity = manager.SelectOne("5912a5f2-4978-4d8e-bae0-a06abcb5a228");
-
-            // Có thể entity rỗng nếu không tìm thấy
-            if (entity == null || string.IsNullOrEmpty(entity.Id))
-                return NotFound();
-
-            var dto = new CustomsAnswer
-            {
-                Id = entity.Id,
-                QuestionId = entity.QuestionId,
-                Content= entity.Content
-            };
-            return Ok(dto);
+            var game = videoGames.FirstOrDefault(g => g.Id == id);
+            return game is null ? NotFound() : Ok(game);
         }
 
+        // POST api/videogame
+        [HttpPost]
+        public ActionResult<VideoGame> CreateVideoGame([FromBody] VideoGame newGame)
+        {
+            if (newGame is null)
+                return BadRequest("Body không được rỗng.");
 
+            if (string.IsNullOrWhiteSpace(newGame.Title) ||
+                string.IsNullOrWhiteSpace(newGame.Platform))
+                return BadRequest("Title và Platform là bắt buộc.");
 
-        //[HttpPost]
-        //public ActionResult<VideoGame> AddVideoGame(VideoGame newGame)
-        //{
-        //    if (newGame is null)
-        //        return BadRequest();
-        //    newGame.Id = videoGames.Max(g => g.Id) + 1;
-        //    videoGames.Add(newGame);
-        //    return CreatedAtAction(nameof(GetVideoGameById), new { id = newGame.Id }, newGame);
+            // Sinh Id mới (tự tăng)
+            var nextId = videoGames.Count == 0 ? 1 : videoGames.Max(g => g.Id) + 1;
+            newGame.Id = nextId;
 
-        //}
+            videoGames.Add(newGame);
+
+            // Trả 201 Created + Location trỏ tới GET theo id
+            return CreatedAtAction(nameof(GetVideoGameById), new { id = newGame.Id }, newGame);
+        }
+
 
 
         [HttpPut("{id}")]

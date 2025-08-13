@@ -1,6 +1,6 @@
 ﻿using HieuTest.Manager;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using App.Xuatnhapcanh.Dal.EntityClasses;
 
 namespace HieuTest.Controllers
 {
@@ -8,13 +8,30 @@ namespace HieuTest.Controllers
     [ApiController]
     public class CustomsAnswerController : ControllerBase
     {
-        [HttpGet("{id}")]
-        public IActionResult GetCustomsAnswerOptionById(string id)
+        // GET api/CustomsAnswer
+        [HttpGet]
+        public IActionResult GetAll()
         {
-            CustomsAnswerOptionManager manager = new CustomsAnswerOptionManager();
-            var entity = manager.SelectOne("5912a5f2-4978-4d8e-bae0-a06abcb5a228");
+            var manager = new CustomsAnswerOptionManager();
+            var entities = manager.SelectAll();
 
-            // Có thể entity rỗng nếu không tìm thấy
+            var result = entities.Select(e => new CustomsAnswer
+            {
+                Id = e.Id,
+                QuestionId = e.QuestionId,
+                Content = e.Content
+            }).ToList();
+
+            return Ok(result);
+        }
+
+        // GET api/CustomsAnswer/{id}
+        [HttpGet("{id}")]
+        public IActionResult GetById(string id)
+        {
+            var manager = new CustomsAnswerOptionManager();
+            var entity = manager.SelectOne(id); // dùng id truyền vào
+
             if (entity == null || string.IsNullOrEmpty(entity.Id))
                 return NotFound();
 
@@ -27,49 +44,82 @@ namespace HieuTest.Controllers
             return Ok(dto);
         }
 
+        
+
+        // POST api/CustomsAnswer
         [HttpPost]
-        public IActionResult CreateCustomsAnswer([FromBody] CustomsAnswer dto)
+        public IActionResult Create([FromBody] CustomsAnswer model)
         {
+            if (model == null)
+                return BadRequest("Payload rỗng.");
+
+            if (string.IsNullOrWhiteSpace(model.QuestionId) || string.IsNullOrWhiteSpace(model.Content))
+                return BadRequest("Thiếu dữ liệu bắt buộc: QuestionId, Content.");
+
             var manager = new CustomsAnswerOptionManager();
-            var entity = new CustomsAnswer
+
+            var entity = new CustomsAnswerOptionEntity
             {
-                Id = Guid.NewGuid().ToString(),
-                QuestionId = dto.QuestionId,
-                Content = dto.Content
+                Id = string.IsNullOrWhiteSpace(model.Id) ? Guid.NewGuid().ToString() : model.Id,
+                QuestionId = model.QuestionId,
+                Content = model.Content
             };
-            manager.Insert(entity); // Giả sử bạn đã có hàm Insert trong Manager
-            return CreatedAtAction(nameof(GetCustomsAnswerOptionById), new { id = entity.Id }, entity);
+
+            var ok = manager.Insert(entity);
+            if (!ok) return StatusCode(500, "Insert thất bại.");
+
+            var dto = new CustomsAnswer
+            {
+                Id = entity.Id,
+                QuestionId = entity.QuestionId,
+                Content = entity.Content
+            };
+
+            return CreatedAtAction(nameof(GetById), new { id = entity.Id }, dto);
         }
 
+        // PUT api/CustomsAnswer/{id}
         [HttpPut("{id}")]
-        public IActionResult UpdateCustomsAnswer(string id, [FromBody] CustomsAnswer dto)
+        public IActionResult Update(string id, [FromBody] CustomsAnswer model)
         {
+            if (string.IsNullOrWhiteSpace(id))
+                return BadRequest("Thiếu id.");
+
+            if (model == null)
+                return BadRequest("Payload rỗng.");
+
             var manager = new CustomsAnswerOptionManager();
-            var entity = manager.SelectOne(id);
-            if (entity == null)
+            var existing = manager.SelectOne(id);
+
+            if (existing == null || string.IsNullOrEmpty(existing.Id))
                 return NotFound();
 
-            entity.QuestionId = dto.QuestionId;
-            entity.Content = dto.Content;
-            manager.Update(entity); // Giả sử bạn đã có hàm Update trong Manager
+            // cập nhật các trường cho entity
+            existing.QuestionId = string.IsNullOrWhiteSpace(model.QuestionId) ? existing.QuestionId : model.QuestionId;
+            existing.Content = string.IsNullOrWhiteSpace(model.Content) ? existing.Content : model.Content;
+
+            var ok = manager.Update(existing);
+            if (!ok) return StatusCode(500, "Update thất bại.");
+
             return NoContent();
         }
 
+        // DELETE api/CustomsAnswer/{id}
         [HttpDelete("{id}")]
-        public IActionResult DeleteCustomsAnswer(string id)
+        public IActionResult Delete(string id)
         {
+            if (string.IsNullOrWhiteSpace(id))
+                return BadRequest("Thiếu id.");
+
             var manager = new CustomsAnswerOptionManager();
-            var entity = manager.SelectOne(id);
-            if (entity == null)
+            var existing = manager.SelectOne(id);
+            if (existing == null || string.IsNullOrEmpty(existing.Id))
                 return NotFound();
 
-            manager.Delete(id); // Giả sử bạn đã có hàm Delete trong Manager
+            var ok = manager.Delete(id);
+            if (!ok) return StatusCode(500, "Delete thất bại.");
+
             return NoContent();
         }
-
-
-
-
-
     }
 }
