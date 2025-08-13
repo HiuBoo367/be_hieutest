@@ -3,11 +3,29 @@ using App.Xuatnhapcanh.Dal.EntityClasses;
 using App.Xuatnhapcanh.Dal.HelperClasses;
 using App.Xuatnhapcanh.Services;
 using SD.LLBLGen.Pro.ORMSupportClasses;
+using System.Linq;
 
 namespace HieuTest.Manager
 {
     public class CustomsAnswerOptionManager
     {
+        public IEnumerable<CustomsAnswerOptionEntity> SelectAll()
+        {
+            var toReturn = new EntityCollection<CustomsAnswerOptionEntity>();
+            using (DataAccessAdapterBase dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter())
+            {
+                var parameters = new QueryParameters()
+                {
+                    CollectionToFetch = toReturn,
+                    // Không filter => lấy tất cả
+                    CacheResultset = true,
+                    CacheDuration = new TimeSpan(0, 0, 10)
+                };
+                dbAdapter.FetchEntityCollection(parameters);
+            }
+            return toReturn; // IEnumerable<CustomsAnswerOptionEntity>
+        }
+
         public CustomsAnswerOptionEntity SelectOne(string _id)
         {
             var toReturn = new EntityCollection<CustomsAnswerOptionEntity>();
