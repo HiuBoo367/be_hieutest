@@ -120,6 +120,8 @@ namespace HieuTest.Controllers
             if (!ok) return StatusCode(500, "Delete thất bại.");
 
             return NoContent();
+
         }
     }
 }
+//không có gì
