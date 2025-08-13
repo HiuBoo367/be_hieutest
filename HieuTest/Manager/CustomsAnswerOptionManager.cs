@@ -26,52 +26,72 @@ namespace HieuTest.Manager
             return toReturn; // IEnumerable<CustomsAnswerOptionEntity>
         }
 
-        public CustomsAnswerOptionEntity SelectOne(string _id)
+        public CustomsAnswerOptionEntity? SelectOne(string id)
         {
             var toReturn = new EntityCollection<CustomsAnswerOptionEntity>();
-            using (DataAccessAdapterBase dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter())
+            using var dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter();
+            var parameters = new QueryParameters
             {
-                var parameters = new QueryParameters()
-                {
-                    CollectionToFetch = toReturn,
-                    FilterToUse = CustomsAnswerOptionFields.Id == _id,
-                    CacheResultset = true,
-                    CacheDuration = new TimeSpan(0, 0, 10)
-                };
-                dbAdapter.FetchEntityCollection(parameters);
-            }
-            if (toReturn != null && toReturn.Items.Count > 0) return toReturn.Items[0];
-            return new CustomsAnswerOptionEntity();
+                CollectionToFetch = toReturn,
+                FilterToUse = CustomsAnswerOptionFields.Id == id,
+                CacheResultset = true,
+                CacheDuration = TimeSpan.FromSeconds(10)
+            };
+            dbAdapter.FetchEntityCollection(parameters);
+            return (toReturn != null && toReturn.Items.Count > 0) ? toReturn.Items[0] : null;
         }
 
         public bool Insert(CustomsAnswerOptionEntity entity)
         {
-            using (DataAccessAdapterBase dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter())
+            using var dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter();
+
+            // Nếu bạn muốn bắt buộc phải có QuestionId:
+            if (string.IsNullOrWhiteSpace(entity.QuestionId))
+                throw new ArgumentException("QuestionId is required.");
+
+            // Nếu QuestionId != null => xác thực tồn tại và gắn navigation
+            if (!string.IsNullOrWhiteSpace(entity.QuestionId))
             {
-                dbAdapter.SaveEntity(entity, true);
-                return true;
+                var parent = new CustomsQuestionEntity(entity.QuestionId);
+                if (!dbAdapter.FetchEntity(parent))
+                    throw new InvalidOperationException($"CustomsQuestion '{entity.QuestionId}' not found.");
+
+                entity.CustomsQuestion = parent; // đảm bảo FK hợp lệ
             }
+
+            dbAdapter.SaveEntity(entity, true);
+            return true;
         }
 
         public bool Update(CustomsAnswerOptionEntity entity)
         {
-            using (DataAccessAdapterBase dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter())
+            using var dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter();
+
+            // Nếu người dùng đổi QuestionId
+            if (!string.IsNullOrWhiteSpace(entity.QuestionId))
             {
-                dbAdapter.SaveEntity(entity, false);
-                return true;
+                var parent = new CustomsQuestionEntity(entity.QuestionId);
+                if (!dbAdapter.FetchEntity(parent))
+                    throw new InvalidOperationException($"CustomsQuestion '{entity.QuestionId}' not found.");
+                entity.CustomsQuestion = parent;
             }
+            else
+            {
+                // Cho phép clear FK (vì cột nullable). Nếu không muốn, ném lỗi như Insert.
+                entity.CustomsQuestion = null;
+            }
+
+            dbAdapter.SaveEntity(entity, false);
+            return true;
         }
 
         public bool Delete(string id)
         {
-            using (DataAccessAdapterBase dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter())
-            {
-                var entity = SelectOne(id);
-                if (entity == null || string.IsNullOrEmpty(entity.Id))
-                    return false;
-                dbAdapter.DeleteEntity(entity);
-                return true;
-            }
+            using var dbAdapter = (new DataAccessAdapterFactory()).CreateAdapter();
+            var entity = SelectOne(id);
+            if (entity is null) return false;
+            dbAdapter.DeleteEntity(entity);
+            return true;
         }
     }
 

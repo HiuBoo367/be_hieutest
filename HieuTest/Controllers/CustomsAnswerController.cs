@@ -30,21 +30,13 @@ namespace HieuTest.Controllers
         public IActionResult GetById(string id)
         {
             var manager = new CustomsAnswerOptionManager();
-            var entity = manager.SelectOne(id); // dùng id truyền vào
-
-            if (entity == null || string.IsNullOrEmpty(entity.Id))
-                return NotFound();
-
-            var dto = new CustomsAnswer
-            {
-                Id = entity.Id,
-                QuestionId = entity.QuestionId,
-                Content = entity.Content
-            };
-            return Ok(dto);
+            var entity = manager.SelectOne(id);
+            if (entity is null) return NotFound();
+            return Ok(new CustomsAnswer { Id = entity.Id, QuestionId = entity.QuestionId, Content = entity.Content });
         }
 
-        
+
+
 
         // POST api/CustomsAnswer
         [HttpPost]
